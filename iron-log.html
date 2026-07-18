@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Iron Log">
+<meta name="theme-color" content="#14161C">
+<title>Iron Log</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAC2klEQVR4nO3dwVHbQBiAUZFJCQwnekghaSdlpJ0UkorIgYsPIYPQrrP78d4ZPPK/Hxojr+WHx6fnlwMivvzvA4CRBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEn5OvPBf/38durnv//4PelImGmldX54fHp+mfHAZ5/kLWHvY7V1nvKS48qTHPH73MeK6zw86FEHKeq1rbrO/ikkRdCkCJoUQZMiaFIETYqgSRE0KVP3cszy3ovx3kJ/W3WG252hz7yz5N3GvyvPcKugPzLc3RZktvoMtwn6ylB3WpCZPsMMtwka3kPQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkZfvfRXfbNso6RH/NyhiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNytJ38L/dVnh1W+pud6KfYeQMV90m7AxNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBk7JN0Ff2M9sL/eozzHCboI/jY0PdZSHupT7DrYI+jnPD3Wkh7qk8w6U/gvWW3Ya8ouoMtztDw78ImhRBkyJoUgRNiqBJETQpw4MedX2zep20YtV1doYmZUrQV//qnJ33sOI6D//y+ltn71Ap5D2ttM5Tg4Z78xqaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGT8geCh2rlzf8l4QAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAC2klEQVR4nO3dwVHbQBiAUZFJCQwnekghaSdlpJ0UkorIgYsPIYPQrrP78d4ZPPK/Hxojr+WHx6fnlwMivvzvA4CRBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEn5OvPBf/38durnv//4PelImGmldX54fHp+mfHAZ5/kLWHvY7V1nvKS48qTHPH73MeK6zw86FEHKeq1rbrO/ikkRdCkCJoUQZMiaFIETYqgSRE0KVP3cszy3ovx3kJ/W3WG252hz7yz5N3GvyvPcKugPzLc3RZktvoMtwn6ylB3WpCZPsMMtwka3kPQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkZfvfRXfbNso6RH/NyhiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNytJ38L/dVnh1W+pud6KfYeQMV90m7AxNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBk7JN0Ff2M9sL/eozzHCboI/jY0PdZSHupT7DrYI+jnPD3Wkh7qk8w6U/gvWW3Ya8ouoMtztDw78ImhRBkyJoUgRNiqBJETQpw4MedX2zep20YtV1doYmZUrQV//qnJ33sOI6D//y+ltn71Ap5D2ttM5Tg4Z78xqaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGTImhSBE2KoEkRNCmCJkXQpAiaFEGT8geCh2rlzf8l4QAAAABJRU5ErkJggg==">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #14161C; --surface: #1B1E27; --surface2: #242833;
+    --chalk: #EDEAE3; --muted: #8B90A0; --brass: #C9A24B;
+    --teal: #4FB8A6; --danger: #E15554;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0; padding: 0; background: var(--ink); color: var(--chalk);
+    font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+  ::selection { background: var(--brass); color: var(--ink); }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"] { -moz-appearance: textfield; }
+
+  #shell { max-width: 480px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+  #main { flex: 1; padding: 24px 16px 100px; }
+
+  .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+
+  .card { background: var(--surface); border-radius: 18px; padding: 16px; }
+  .btn-primary {
+    background: var(--brass); color: var(--ink); border: none; border-radius: 18px;
+    padding: 15px; font-weight: 600; font-size: 16px; width: 100%; text-align: center;
+    font-family: inherit; cursor: pointer;
+  }
+  .btn-primary:disabled { opacity: 0.35; }
+  .btn-outline {
+    background: transparent; color: var(--chalk); border: 1px solid var(--surface2);
+    border-radius: 18px; padding: 14px; width: 100%; text-align: center; font-size: 15px;
+    font-family: inherit; cursor: pointer;
+  }
+  .btn-ghost {
+    background: var(--surface2); color: var(--muted); border: none; border-radius: 10px;
+    padding: 8px 10px; font-family: inherit; cursor: pointer; font-size: 13px;
+  }
+  .input {
+    background: var(--surface2); border: none; border-radius: 10px; padding: 11px 12px;
+    color: var(--chalk); width: 100%; font-family: inherit; font-size: 15px;
+  }
+  .input::placeholder { color: var(--muted); }
+  .input:focus, .btn-primary:focus, .btn-outline:focus { outline: 2px solid var(--brass); outline-offset: 1px; }
+
+  h1.page-title { font-size: 40px; margin: 0; }
+  .muted { color: var(--muted); }
+  .teal { color: var(--teal); }
+  .brass { color: var(--brass); }
+  .danger { color: var(--danger); }
+
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .col-gap { display: flex; flex-direction: column; gap: 12px; }
+  .chip {
+    padding: 7px 13px; border-radius: 999px; font-size: 13px; border: none; font-family: inherit;
+    background: var(--surface2); color: var(--muted); cursor: pointer;
+  }
+  .chip.active { background: var(--brass); color: var(--ink); }
+
+  #bottomnav {
+    position: fixed; bottom: 0; left: 0; right: 0; background: rgba(20,22,28,0.96);
+    border-top: 1px solid var(--surface2); backdrop-filter: blur(6px);
+  }
+  #bottomnav .inner { max-width: 480px; margin: 0 auto; display: flex; }
+  #bottomnav button {
+    flex: 1; background: none; border: none; padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
+    color: var(--muted); font-family: inherit; font-size: 12px; letter-spacing: 0.03em; cursor: pointer;
+  }
+  #bottomnav button.active { color: var(--brass); font-weight: 600; }
+
+  .stat3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .stat3 .card { text-align: center; padding: 14px 8px; }
+  .stat3 .num { font-size: 34px; line-height: 1; }
+
+  .heat-grid { display: flex; gap: 3px; overflow-x: auto; padding: 2px; }
+  .heat-week { display: flex; flex-direction: column; gap: 3px; }
+  .heat-cell { width: 10px; height: 10px; border-radius: 2px; background: var(--surface2); }
+  .heat-cell.active { background: var(--brass); }
+  .heat-cell.future { background: transparent; }
+
+  a.link { color: var(--teal); text-decoration: none; font-size: 13px; display: inline-flex; align-items: center; gap: 4px; }
+
+  .setgrid { display: grid; grid-template-columns: 22px 1fr 1fr auto auto; gap: 8px; align-items: center; }
+  .setgrid .hdr { font-size: 10px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.05em; }
+
+  ::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body>
+<div id="shell">
+  <div id="main"><div class="muted" style="padding-top:40px;text-align:center;">Loading...</div></div>
+  <nav id="bottomnav">
+    <div class="inner">
+      <button data-tab="home" onclick="setTab('home')">Home</button>
+      <button data-tab="log" onclick="setTab('log')">Log</button>
+      <button data-tab="exercises" onclick="setTab('exercises')">Exercises</button>
+      <button data-tab="history" onclick="setTab('history')">History</button>
+    </div>
+  </nav>
+</div>
+
+<script>
+// ---------- constants ----------
+const CATEGORIES = ["Chest","Back","Legs","Shoulders","Arms","Core","Cardio","Other"];
+const SEED_EXERCISES = [
+  { id: "seed-bench", name: "Bench Press", category: "Chest" },
+  { id: "seed-squat", name: "Back Squat", category: "Legs" },
+  { id: "seed-deadlift", name: "Deadlift", category: "Back" },
+  { id: "seed-ohp", name: "Overhead Press", category: "Shoulders" },
+  { id: "seed-pullup", name: "Pull-up", category: "Back" },
+  { id: "seed-row", name: "Barbell Row", category: "Back" },
+  { id: "seed-curl", name: "Bicep Curl", category: "Arms" },
+];
+
+// ---------- date helpers ----------
+function toISODate(d) {
+  const y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,"0"), day = String(d.getDate()).padStart(2,"0");
+  return `${y}-${m}-${day}`;
+}
+function todayISO() { return toISODate(new Date()); }
+function addDays(iso, days) {
+  const [y,m,d] = iso.split("-").map(Number);
+  const dt = new Date(y, m-1, d);
+  dt.setDate(dt.getDate() + days);
+  return toISODate(dt);
+}
+function formatFriendly(iso) {
+  const [y,m,d] = iso.split("-").map(Number);
+  const dt = new Date(y, m-1, d);
+  return dt.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+}
+function newId() { return Math.random().toString(36).slice(2,10) + Date.now().toString(36); }
+
+// ---------- state ----------
+let state = {
+  tab: "home",
+  loaded: false,
+  exercises: [],
+  sessions: [],
+  checkins: [],
+  log: { date: todayISO(), blocks: [], picking: false },
+  historyOpenId: null,
+  exForm: { open: false, name: "", category: CATEGORIES[0], tutorialUrl: "" },
+};
+
+// ---------- storage ----------
+async function loadAll() {
+  try {
+    const r = await window.storage.get("exercises");
+    state.exercises = r ? JSON.parse(r.value) : null;
+  } catch (e) { state.exercises = null; }
+  if (state.exercises === null) {
+    state.exercises = SEED_EXERCISES;
+    await persistExercises();
+  }
+  try {
+    const r = await window.storage.get("sessions");
+    state.sessions = r ? JSON.parse(r.value) : [];
+  } catch (e) { state.sessions = []; }
+  try {
+    const r = await window.storage.get("checkins");
+    state.checkins = r ? JSON.parse(r.value) : [];
+  } catch (e) { state.checkins = []; }
+  state.loaded = true;
+  render();
+}
+async function persistExercises() {
+  try { await window.storage.set("exercises", JSON.stringify(state.exercises), false); } catch (e) {}
+}
+async function persistSessions() {
+  try { await window.storage.set("sessions", JSON.stringify(state.sessions), false); } catch (e) {}
+}
+async function persistCheckins() {
+  try { await window.storage.set("checkins", JSON.stringify(state.checkins), false); } catch (e) {}
+}
+
+// ---------- streaks ----------
+function computeStreaks(checkins) {
+  const set = new Set(checkins);
+  const totalDays = set.size;
+  let current = 0;
+  let cursor = todayISO();
+  if (!set.has(cursor)) cursor = addDays(cursor, -1);
+  while (set.has(cursor)) { current++; cursor = addDays(cursor, -1); }
+  const sorted = Array.from(set).sort();
+  let longest = 0, run = 0, prev = null;
+  for (const date of sorted) {
+    if (prev && addDays(prev, 1) === date) run++; else run = 1;
+    longest = Math.max(longest, run);
+    prev = date;
+  }
+  return { current, longest, totalDays };
+}
+
+// ---------- actions ----------
+function setTab(tab) { state.tab = tab; render(); }
+
+async function checkInToday() {
+  const today = todayISO();
+  if (!state.checkins.includes(today)) {
+    state.checkins.push(today);
+    await persistCheckins();
+  }
+  render();
+}
+
+function setLogDateSilent(v) { state.log.date = v; }
+function openExercisePicker() { state.log.picking = true; render(); }
+function closeExercisePicker() { state.log.picking = false; render(); }
+function addExerciseToLog(exId, exName) {
+  state.log.blocks.push({ exerciseId: exId, exerciseName: exName, sets: [] });
+  state.log.picking = false;
+  render();
+}
+function removeLogBlock(idx) { state.log.blocks.splice(idx, 1); render(); }
+function addLogSet(blockIdx) {
+  const b = state.log.blocks[blockIdx];
+  const last = b.sets[b.sets.length - 1];
+  b.sets.push({ id: newId(), weight: last ? last.weight : 0, reps: last ? last.reps : 0, unit: last ? last.unit : "lb" });
+  render();
+}
+function updateLogSetSilent(blockIdx, setId, field, value) {
+  const b = state.log.blocks[blockIdx];
+  const s = b.sets.find((s) => s.id === setId);
+  if (!s) return;
+  if (field === "weight" || field === "reps") s[field] = Number(value);
+}
+function toggleLogSetUnit(blockIdx, setId) {
+  const b = state.log.blocks[blockIdx];
+  const s = b.sets.find((s) => s.id === setId);
+  if (!s) return;
+  s.unit = s.unit === "lb" ? "kg" : "lb";
+  render();
+}
+function removeLogSet(blockIdx, setId) {
+  const b = state.log.blocks[blockIdx];
+  b.sets = b.sets.filter((s) => s.id !== setId);
+  render();
+}
+async function saveWorkout() {
+  const nonEmpty = state.log.blocks.filter((b) => b.sets.length > 0);
+  if (nonEmpty.length === 0) return;
+  const session = { id: newId(), date: state.log.date, exercises: nonEmpty, createdAt: new Date().toISOString() };
+  state.sessions.unshift(session);
+  await persistSessions();
+  if (!state.checkins.includes(session.date)) {
+    state.checkins.push(session.date);
+    await persistCheckins();
+  }
+  state.log = { date: todayISO(), blocks: [], picking: false };
+  state.tab = "history";
+  render();
+}
+
+function toggleExForm() {
+  state.exForm.open = !state.exForm.open;
+  if (!state.exForm.open) state.exForm = { open: false, name: "", category: CATEGORIES[0], tutorialUrl: "" };
+  render();
+}
+function setExFormNameSilent(v) { state.exForm.name = v; }
+function setExFormUrlSilent(v) { state.exForm.tutorialUrl = v; }
+function setExFormCategory(cat) { state.exForm.category = cat; render(); }
+async function saveExercise() {
+  const name = state.exForm.name.trim();
+  if (!name) return;
+  state.exercises.push({
+    id: newId(),
+    name,
+    category: state.exForm.category,
+    tutorialUrl: state.exForm.tutorialUrl.trim() || undefined,
+  });
+  await persistExercises();
+  state.exForm = { open: false, name: "", category: CATEGORIES[0], tutorialUrl: "" };
+  render();
+}
+async function deleteExercise(id) {
+  state.exercises = state.exercises.filter((e) => e.id !== id);
+  await persistExercises();
+  render();
+}
+
+function toggleHistoryOpen(id) {
+  state.historyOpenId = state.historyOpenId === id ? null : id;
+  render();
+}
+async function deleteSession(id) {
+  state.sessions = state.sessions.filter((s) => s.id !== id);
+  await persistSessions();
+  render();
+}
+
+// ---------- rendering ----------
+function esc(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function renderHome() {
+  const today = todayISO();
+  const checkedIn = state.checkins.includes(today);
+  const stats = computeStreaks(state.checkins);
+
+  // heatmap: 10 weeks ending today, Sun-Sat columns
+  const dow = new Date().getDay();
+  const totalCells = 70;
+  let cursor = addDays(today, -(totalCells - 1 - dow) - (6 - dow));
+  const cells = [];
+  for (let i = 0; i < totalCells; i++) { cells.push(cursor); cursor = addDays(cursor, 1); }
+  const checkinSet = new Set(state.checkins);
+  let weeksHtml = "";
+  for (let i = 0; i < cells.length; i += 7) {
+    const week = cells.slice(i, i+7);
+    weeksHtml += `<div class="heat-week">` + week.map((d) => {
+      if (d > today) return `<div class="heat-cell future"></div>`;
+      return `<div class="heat-cell ${checkinSet.has(d) ? "active" : ""}" title="${d}"></div>`;
+    }).join("") + `</div>`;
+  }
+
+  const recent = state.sessions.slice(0, 4);
+  const recentHtml = recent.length === 0
+    ? `<div class="card muted" style="text-align:center;">No workouts logged yet. <a class="link" style="display:inline" onclick="setTab('log')">Log your first one.</a></div>`
+    : `<div class="col-gap">` + recent.map((s) => {
+        const totalSets = s.exercises.reduce((n,e) => n + e.sets.length, 0);
+        return `<div class="card row" onclick="setTab('history')" style="cursor:pointer;">
+          <div>
+            <div style="font-size:14px;font-weight:500;">${esc(formatFriendly(s.date))}</div>
+            <div class="muted" style="font-size:12px;margin-top:2px;">${s.exercises.length} exercise${s.exercises.length===1?"":"s"} · ${totalSets} sets</div>
+          </div>
+          <div class="muted">›</div>
+        </div>`;
+      }).join("") + `</div>`;
+
+  return `
+    <div class="col-gap" style="gap:22px;">
+      <div>
+        <div class="label">${esc(formatFriendly(today))}</div>
+        <h1 class="page-title display">Iron Log</h1>
+      </div>
+
+      <button class="btn-primary" style="background:${checkedIn ? "var(--surface)" : "var(--brass)"};color:${checkedIn ? "var(--teal)" : "var(--ink)"};" ${checkedIn ? "disabled" : ""} onclick="checkInToday()">
+        ${checkedIn ? "✓ Checked in today" : "Check in at the gym"}
+      </button>
+
+      <div class="stat3">
+        <div class="card"><div class="num display brass tabular">${stats.current}</div><div class="label" style="margin-top:4px;">Day streak</div></div>
+        <div class="card"><div class="num display tabular">${stats.longest}</div><div class="label" style="margin-top:4px;">Best streak</div></div>
+        <div class="card"><div class="num display teal tabular">${stats.totalDays}</div><div class="label" style="margin-top:4px;">Total days</div></div>
+      </div>
+
+      <div>
+        <div class="label" style="margin-bottom:8px;">Last 10 weeks</div>
+        <div class="card"><div class="heat-grid">${weeksHtml}</div></div>
+      </div>
+
+      <div>
+        <div class="row" style="margin-bottom:8px;">
+          <div class="label">Recent workouts</div>
+          <a class="link" onclick="setTab('history')">See all ›</a>
+        </div>
+        ${recentHtml}
+      </div>
+
+      <button class="btn-outline" onclick="setTab('log')">Log a workout</button>
+    </div>
+  `;
+}
+
+function renderLog() {
+  const l = state.log;
+  const tutorialFor = (id) => { const e = state.exercises.find((e) => e.id === id); return e ? e.tutorialUrl : null; };
+
+  const blocksHtml = l.blocks.map((block, bi) => {
+    const url = tutorialFor(block.exerciseId);
+    const setsHtml = block.sets.length === 0 ? "" : `
+      <div class="col-gap" style="gap:6px;margin-top:12px;">
+        <div class="setgrid"><span class="hdr">#</span><span class="hdr">Weight</span><span class="hdr">Reps</span><span class="hdr">Unit</span><span></span></div>
+        ${block.sets.map((set, si) => `
+          <div class="setgrid">
+            <span class="muted tabular" style="font-size:14px;">${si+1}</span>
+            <input class="input mono tabular" type="number" inputmode="decimal" value="${set.weight || ""}"
+              oninput="updateLogSetSilent(${bi}, '${set.id}', 'weight', this.value)" style="padding:9px 10px;font-size:14px;">
+            <input class="input mono tabular" type="number" inputmode="numeric" value="${set.reps || ""}"
+              oninput="updateLogSetSilent(${bi}, '${set.id}', 'reps', this.value)" style="padding:9px 10px;font-size:14px;">
+            <button class="btn-ghost" onclick="toggleLogSetUnit(${bi}, '${set.id}')">${set.unit}</button>
+            <button class="btn-ghost danger" onclick="removeLogSet(${bi}, '${set.id}')">✕</button>
+          </div>
+        `).join("")}
+      </div>`;
+
+    return `
+      <div class="card">
+        <div class="row" style="align-items:flex-start;">
+          <div>
+            <div style="font-weight:500;">${esc(block.exerciseName)}</div>
+            ${url ? `<a class="link" href="${esc(url)}" target="_blank" rel="noreferrer">How to ↗</a>` : ""}
+          </div>
+          <button class="btn-ghost danger" onclick="removeLogBlock(${bi})">✕</button>
+        </div>
+        ${setsHtml}
+        <button class="btn-outline" style="margin-top:12px;padding:10px;font-size:14px;" onclick="addLogSet(${bi})">+ Add set</button>
+      </div>`;
+  }).join("");
+
+  const pickerHtml = l.picking ? `
+    <div class="card">
+      <div class="row" style="margin-bottom:8px;">
+        <div class="label">Choose exercise</div>
+        <button class="btn-ghost" onclick="closeExercisePicker()">Cancel</button>
+      </div>
+      <div class="col-gap" style="gap:2px;max-height:260px;overflow-y:auto;">
+        ${state.exercises.map((ex) => `
+          <button onclick="addExerciseToLog('${ex.id}', '${esc(ex.name).replace(/'/g,"\\'")}')"
+            style="text-align:left;background:none;border:none;color:var(--chalk);padding:10px 6px;border-radius:8px;font-family:inherit;font-size:14px;display:flex;justify-content:space-between;cursor:pointer;">
+            <span>${esc(ex.name)}</span><span class="muted" style="font-size:12px;">${esc(ex.category)}</span>
+          </button>`).join("")}
+      </div>
+    </div>` : `<button class="btn-outline" onclick="openExercisePicker()">+ Add exercise</button>`;
+
+  const canSave = l.blocks.some((b) => b.sets.length > 0);
+
+  return `
+    <div class="col-gap" style="gap:22px;">
+      <h1 class="page-title display">Log workout</h1>
+      <div>
+        <div class="label">Date</div>
+        <input class="input" type="date" value="${l.date}" oninput="setLogDateSilent(this.value)" style="margin-top:4px;">
+      </div>
+      <div class="col-gap">${blocksHtml}</div>
+      ${pickerHtml}
+      <button class="btn-primary" ${canSave ? "" : "disabled"} onclick="saveWorkout()">Save workout</button>
+    </div>
+  `;
+}
+
+function renderExercises() {
+  const f = state.exForm;
+  const formHtml = f.open ? `
+    <div class="card col-gap">
+      <div>
+        <div class="label">Name</div>
+        <input class="input" placeholder="e.g. Incline Dumbbell Press" value="${esc(f.name)}"
+          oninput="setExFormNameSilent(this.value)" style="margin-top:4px;">
+      </div>
+      <div>
+        <div class="label">Category</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;">
+          ${CATEGORIES.map((c) => `<button class="chip ${f.category===c?"active":""}" onclick="setExFormCategory('${c}')">${c}</button>`).join("")}
+        </div>
+      </div>
+      <div>
+        <div class="label">Tutorial link (optional)</div>
+        <input class="input" placeholder="https://..." value="${esc(f.tutorialUrl)}"
+          oninput="setExFormUrlSilent(this.value)" style="margin-top:4px;">
+      </div>
+      <button class="btn-primary" onclick="saveExercise()">Save exercise</button>
+    </div>` : "";
+
+  const grouped = CATEGORIES.map((cat) => ({ cat, items: state.exercises.filter((e) => e.category === cat) })).filter((g) => g.items.length > 0);
+  const listHtml = grouped.length === 0 ? `<div class="card muted" style="text-align:center;">No exercises yet.</div>` :
+    grouped.map((g) => `
+      <div>
+        <div class="label" style="margin-bottom:8px;">${g.cat}</div>
+        <div class="col-gap" style="gap:8px;">
+          ${g.items.map((ex) => `
+            <div class="card row">
+              <div style="min-width:0;">
+                <div style="font-size:14px;font-weight:500;">${esc(ex.name)}</div>
+                ${ex.tutorialUrl ? `<a class="link" href="${esc(ex.tutorialUrl)}" target="_blank" rel="noreferrer">How to ↗</a>` : ""}
+              </div>
+              <button class="btn-ghost danger" onclick="deleteExercise('${ex.id}')">✕</button>
+            </div>`).join("")}
+        </div>
+      </div>`).join("");
+
+  return `
+    <div class="col-gap" style="gap:22px;">
+      <div class="row">
+        <h1 class="page-title display">Exercises</h1>
+        <button class="btn-ghost" style="width:40px;height:40px;border-radius:999px;background:var(--brass);color:var(--ink);font-size:18px;" onclick="toggleExForm()">${f.open ? "✕" : "+"}</button>
+      </div>
+      ${formHtml}
+      <div class="col-gap" style="gap:18px;">${listHtml}</div>
+    </div>
+  `;
+}
+
+function renderHistory() {
+  if (state.sessions.length === 0) {
+    return `
+      <div class="col-gap" style="gap:22px;">
+        <h1 class="page-title display">History</h1>
+        <div class="card muted" style="text-align:center;">No workouts logged yet.</div>
+      </div>`;
+  }
+  const itemsHtml = state.sessions.map((s) => {
+    const open = state.historyOpenId === s.id;
+    const totalSets = s.exercises.reduce((n,e) => n + e.sets.length, 0);
+    const detailsHtml = open ? `
+      <div class="col-gap" style="gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--surface2);">
+        ${s.exercises.map((ex) => `
+          <div>
+            <div style="font-size:14px;font-weight:500;margin-bottom:4px;">${esc(ex.exerciseName)}</div>
+            <div class="col-gap" style="gap:2px;">
+              ${ex.sets.map((set,si) => `<div class="muted mono tabular" style="font-size:12px;">${si+1}&nbsp;&nbsp;${set.weight} ${set.unit} × ${set.reps} reps</div>`).join("")}
+            </div>
+          </div>`).join("")}
+        <button class="btn-ghost danger" style="align-self:flex-start;" onclick="deleteSession('${s.id}')">Delete workout</button>
+      </div>` : "";
+
+    return `
+      <div class="card">
+        <div onclick="toggleHistoryOpen('${s.id}')" style="cursor:pointer;" class="row">
+          <div>
+            <div style="font-size:14px;font-weight:500;">${esc(formatFriendly(s.date))}</div>
+            <div class="muted" style="font-size:12px;margin-top:2px;">${s.exercises.length} exercise${s.exercises.length===1?"":"s"} · ${totalSets} sets</div>
+          </div>
+          <div class="muted">${open ? "︿" : "﹀"}</div>
+        </div>
+        ${detailsHtml}
+      </div>`;
+  }).join("");
+
+  return `<div class="col-gap" style="gap:22px;"><h1 class="page-title display">History</h1><div class="col-gap">${itemsHtml}</div></div>`;
+}
+
+function render() {
+  if (!state.loaded) return;
+  const main = document.getElementById("main");
+  if (state.tab === "home") main.innerHTML = renderHome();
+  else if (state.tab === "log") main.innerHTML = renderLog();
+  else if (state.tab === "exercises") main.innerHTML = renderExercises();
+  else main.innerHTML = renderHistory();
+
+  document.querySelectorAll("#bottomnav button").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.tab === state.tab);
+  });
+}
+
+loadAll();
+
+</script>
+</body>
+</html>
